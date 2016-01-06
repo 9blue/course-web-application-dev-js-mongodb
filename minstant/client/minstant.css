@@ -8,3 +8,11 @@
 .avatar_img{
 	height:75px;
 }
+.avatar_img_sm{
+    height:25px;
+}
+
+.chat_row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

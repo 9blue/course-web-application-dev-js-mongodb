@@ -19,6 +19,11 @@
 </template>
 <!-- simple template that displays a message -->
 <template name="chat_message">
-    someone said: {{text}}
+    <div class="row chat_row">
+    {{#with get_profile sender}}
+        <div class="col-xs-1"><img src="/{{avatar}}" class="avatar_img_sm center-block"></div>
+        {{username}}
+    {{/with}} said: {{{parseEmoticons text}}}
     <br>
+    </div>
 </template>

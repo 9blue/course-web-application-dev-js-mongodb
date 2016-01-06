@@ -1,4 +1,3 @@
-
 // start up script that creates some users for testing
 // users have the username 'user1@test.com' .. 'user8@test.com'
 // and the password test123
@@ -28,3 +27,19 @@ Meteor.startup(function() {
     }
 });
 
+// publish read access to collections
+
+// all visible docs
+Meteor.publish("chats", function(){
+    return Chats.find({
+       $or:[
+        {user1Id:this.userId},
+        {user2Id:this.userId}
+        ]
+    });
+});
+
+Meteor.publish("userData", function () {
+    console.log("Publishing");
+    return Meteor.users.find();
+});
