@@ -1,0 +1,11 @@
+<!-- Top level template for the lobby page -->
+<template name="lobby_page">
+    {{> available_user_list}}
+</template>
+<!-- display a list of users -->
+<template name="available_user_list">
+    <h2>Choose someone to chat with:</h2>
+    <div class="row">
+        {{#each users}} {{> available_user}} {{/each}}
+    </div>
+</template>
